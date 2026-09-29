@@ -1,0 +1,46 @@
+gin:
+  port: ':8080'
+  domain: 'http://localhost:8080'
+  corsAllowOrigins: ['http://localhost:5173']
+mysql:
+  host: '127.0.0.1'
+  port: '3306'
+  user: 'yantu'
+  password: 'REPLACE_WITH_LOCAL_PASSWORD'
+  database: 'yantu'
+redis:
+  host: '127.0.0.1'
+  port: '6379'
+  password: ''
+  database: 0
+jwt:
+  secretKey: 'REPLACE_WITH_RANDOM_SECRET'
+  expireTime: 168
+mail:
+  senderName: '研途智伴'
+  smtpHost: 'smtp.example.com'
+  username: 'REPLACE_WITH_SMTP_USER'
+  password: 'REPLACE_WITH_SMTP_PASSWORD'
+  smtpPort: 587
+azureTTS:
+  baseURL: 'https://%s.tts.speech.microsoft.com/cognitiveservices/v1'
+  ssmlTemplate: |
+    <speak version='1.0' xml:lang='%s'>
+      <voice xml:lang='%s' xml:gender='%s' name='%s'>%s</voice>
+    </speak>
+  subscriptionKey: 'REPLACE_WITH_SPEECH_KEY'
+  region: 'eastasia'
+azureSpeech:
+  baseURL: 'https://%s.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1'
+  subscriptionKey: 'REPLACE_WITH_SPEECH_KEY'
+  region: 'eastasia'
+openAI:
+  key: 'REPLACE_WITH_MODEL_KEY'
+  baseURL: 'https://api.example.com/v1'
+  globalTemperature: 0.5
+  thinkModelName: 'REPLACE_WITH_AVAILABLE_MODEL'
+  agentModelName: 'REPLACE_WITH_AVAILABLE_MODEL'
+  useModelName: 'REPLACE_WITH_AVAILABLE_MODEL'
+anythingLLM:
+  baseURL: 'http://localhost:3001'
+  apiKey: 'REPLACE_WITH_ANYTHINGLLM_KEY'

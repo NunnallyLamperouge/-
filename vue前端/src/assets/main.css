@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.theme-transition,
+.theme-transition * {
+    transition: background-color 0.5s, color 0.5s !important;
+}
+
+/* 暗色模式样式 */
+@layer components {
+  /* 自定义颜色变量 */
+  :root {
+    /* 新的暗色模式配色 - 更深邃的背景色 */
+    --dark-bg-primary: #0f1117;
+    --dark-bg-secondary: #1a1e2c;
+    --dark-bg-tertiary: #232838;
+    
+    /* 强调色 */
+    --dark-accent-primary: #6366f1;
+    --dark-accent-secondary: #8b5cf6;
+    --dark-accent-tertiary: #ec4899;
+    
+    /* 文本颜色 */
+    --dark-text-primary: #f3f4f6;
+    --dark-text-secondary: #d1d5db;
+    --dark-text-muted: #9ca3af;
+  }
+
+  /* 基础组件 */
+  .card {
+    @apply bg-white dark:bg-[#1a1e2c] rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm p-4 dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)];
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 dark:bg-indigo-600 text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity dark:hover:bg-indigo-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md hover:opacity-90 transition-opacity dark:hover:bg-gray-700;
+  }
+
+  .input {
+    @apply bg-gray-50 dark:bg-[#232838] border border-gray-300 dark:border-gray-700 rounded-md px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-indigo-500;
+  }
+
+  /* 背景类 */
+  .bg-app {
+    @apply bg-white dark:bg-[#0f1117];
+  }
+
+  .bg-elevated {
+    @apply bg-gray-50 dark:bg-[#1a1e2c];
+  }
+
+  .bg-sunken {
+    @apply bg-gray-100 dark:bg-[#232838];
+  }
+
+  /* 文本类 */
+  .text-app {
+    @apply text-gray-900 dark:text-[#f3f4f6];
+  }
+
+  .text-muted {
+    @apply text-gray-500 dark:text-[#9ca3af];
+  }
+
+  /* 边框类 */
+  .border-app {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+
+  /* 分割线 */
+  .divider {
+    @apply h-px w-full bg-gray-200 dark:bg-gray-800;
+  }
+
+  /* 导航栏 */
+  .navbar {
+    @apply bg-white dark:bg-[#0f1117] border-b border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-[0_1px_3px_rgba(0,0,0,0.3)];
+  }
+
+  /* 侧边栏 */
+  .sidebar {
+    @apply bg-gray-50 dark:bg-[#1a1e2c] border-r border-gray-200 dark:border-gray-800;
+  }
+
+  /* 卡片头部 */
+  .card-header {
+    @apply border-b border-gray-200 dark:border-gray-800 pb-3 mb-3;
+  }
+
+  /* 表格 */
+  .table-row {
+    @apply border-b border-gray-200 dark:border-gray-800;
+  }
+
+  .table-header {
+    @apply bg-gray-50 dark:bg-[#1a1e2c] text-gray-700 dark:text-gray-300;
+  }
+}
